@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="Flag_Guesser"
-run/main_scene="res://keyboard.tscn"
-config/features=PackedStringArray("4.2", "GL Compatibility")
+run/main_scene="uid://dt52if1upmuks"
+config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+CountryFlags="*res://country_flags.gd"
+Keyboard="*res://keyboard.gd"
 
 [display]
 
