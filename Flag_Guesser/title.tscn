@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://btca1eym6kd2v"]
+
+[ext_resource type="Script" uid="uid://c461t30cr2a4f" path="res://title.gd" id="1_y7k74"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y7k74")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 704.0
+offset_right = 504.0
+offset_bottom = 832.0
+text = "START"
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 192.0
+offset_right = 512.0
+offset_bottom = 320.0
+theme_override_font_sizes/font_size = 50
+text = "Flag Guesser"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

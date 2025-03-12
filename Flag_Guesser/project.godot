@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Flag_Guesser"
-run/main_scene="uid://dt52if1upmuks"
+run/main_scene="uid://btca1eym6kd2v"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
