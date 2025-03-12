@@ -98,7 +98,7 @@ func _on_enter_key_pressed():
 		result.text = "Correct! The country is " + selected_country
 		return
 
-	# Current guess is incorrect, go to next row
+	# Current guess is incorrect
 	else:
 		row_num += 1
 		hint.text += str(" ❌ - Hint: " + get_hint(row_num))
@@ -135,13 +135,15 @@ func time_up():
 
 func _on_timer_tick():
 	# If the guess is wrong while there's still time and guesses left
-	if time_remaining > 0 and row_num < 5 and stored_attempts[row_num] != selected_country:
+	if time_remaining > 0 and row_num < 5 \
+	and stored_attempts[row_num] != selected_country:
 		time_remaining -= 1
 		timer_label.text = "Time: " + str(time_remaining) + "s"
 		print("Time Left:", time_remaining)  # Debugging
 
 	# Stop timer if all the guesses are gone or if they guessed correctly
-	elif (time_remaining > 0 and row_num == 5) or (time_remaining > 0 and stored_attempts[row_num] == selected_country):
+	elif (time_remaining > 0 and row_num == 5) \
+	or (time_remaining > 0 and stored_attempts[row_num] == selected_country):
 		timer_label.text = "Time: " + str(time_remaining) + "s"
 		game_timer.stop()
 	

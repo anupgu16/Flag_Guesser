@@ -246,6 +246,7 @@ vertical_alignment = 1
 [node name="GameTimer" type="Timer" parent="Control"]
 
 [node name="Border" type="ReferenceRect" parent="."]
+layout_mode = 0
 offset_left = 64.0
 offset_top = 64.0
 offset_right = 640.0
