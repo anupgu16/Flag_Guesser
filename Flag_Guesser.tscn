@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b14s3vaqd04m"]
+
+[ext_resource type="PackedScene" uid="uid://dt52if1upmuks" path="res://keyboard.tscn" id="1_owdlj"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Keyboard" parent="." instance=ExtResource("1_owdlj")]

@@ -1,0 +1,24 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1744151209
+brazil.png::CompressedTexture2D/CompressedTexture2D::5044094141098491787::1741755926::1744148310::1::::<><><>0<>0<>a209572f4af9be80cdfd7a61c0d26bc0<>res://.godot/imported/brazil.png-243c285ce1a721381d853e5ec086559e.ctex::
+button.gd::GDScript/GDScript::7182457783362717096::1741755926::0::1::::<>Button<><>0<>0<><>::
+country_flags.gd::GDScript::6210475747011469533::1744150543::0::1::::country<>Node<><>0<>0<><>::
+flag_guesser.gd::GDScript/GDScript::2039477393236734242::1741755926::0::1::::<>RefCounted<><>0<>0<><>::
+flag_guesser.gdshader::Shader/Shader::7488410677211030195::1741755926::0::1::::<><><>0<>0<><>::
+Flag_Guesser.tscn::PackedScene/PackedScene::125657105440328098::1741755926::0::1::::<><><>0<>0<><>::uid://dt52if1upmuks::::res://keyboard.tscn
+keyboard.gd::GDScript::1112933821145414974::1744150978::0::1::::keyboard_inputs<>Control<><>0<>0<><>::
+keyboard.tscn::PackedScene::8556435361690559622::1744151129::0::1::::<><><>0<>0<><>::uid://p4d4fgsbw8ji::::res://keyboard.gd
+title.gd::GDScript/GDScript::6873927624549680583::1741755926::0::1::::<>Control<><>0<>0<><>::
+title.tscn::PackedScene::3724184146721118711::1744151129::0::1::::<><><>0<>0<><>::uid://c461t30cr2a4f::::res://title.gd
+::res://Flag Images/::1744150507
+australia.png::CompressedTexture2D/CompressedTexture2D::4679030793858585141::1744150209::1744150209::1::::<><><>0<>0<>5d1634921d53da88ea56e3f84ccf68e2<>res://.godot/imported/australia.png-020aee7d7d08eaa64e5c6d546b71207f.ctex::
+brazil.png::CompressedTexture2D/CompressedTexture2D::5044094141098491787::1741755926::1744148310::1::::<><><>0<>0<>3df30b57c5e09270c2c9236c7299005b<>res://.godot/imported/brazil.png-9ed4d6667bc25c7df4f8c13d072ae150.ctex::
+canada.png::CompressedTexture2D/CompressedTexture2D::4466765819883587767::1741755926::1744148310::1::::<><><>0<>0<>9a5119522b6286957f2ad2ffee53ffee<>res://.godot/imported/canada.png-29385028e86e8b9ac138c4355cfde2ec.ctex::
+finland.png::CompressedTexture2D/CompressedTexture2D::3225021933965894827::1741755926::1744148310::1::::<><><>0<>0<>d735ca519be0ff1720abef9f160ed28a<>res://.godot/imported/finland.png-61322be27cdf78b40ca54582421b765c.ctex::
+france.png::CompressedTexture2D/CompressedTexture2D::1700871927723922934::1741755926::1744148310::1::::<><><>0<>0<>4dff3f98e943ba19b1aa0172610e68f3<>res://.godot/imported/france.png-8c1ce5ec02ca253516dce4db70441c82.ctex::
+germany.png::CompressedTexture2D/CompressedTexture2D::7960180291823156640::1741755926::1744148310::1::::<><><>0<>0<>c7e1ae8b5421b45cbf4c6c1a7b61bb16<>res://.godot/imported/germany.png-6c35653004d3ad363af66986380ce82d.ctex::
+india.png::CompressedTexture2D/CompressedTexture2D::3749198660800490865::1744150507::1744150507::1::::<><><>0<>0<>f6a26fda5fffd72456ccdb50835010e2<>res://.godot/imported/india.png-904f1e50bca7c56d9bdd2b74ac984147.ctex::
+japan.png::CompressedTexture2D/CompressedTexture2D::1723056546557216653::1744149833::1744149834::1::::<><><>0<>0<>be7f66e024740c3bf513ec6d3e4ccca5<>res://.godot/imported/japan.png-48e41aaadfe26ed8619f0306f7116979.ctex::
+mexico.png::CompressedTexture2D/CompressedTexture2D::960185280702242616::1741755926::1744148310::1::::<><><>0<>0<>10ccbd736ca2ce9448a4248724e07e62<>res://.godot/imported/mexico.png-f13adf4a202f6920bd31fba5f1e52531.ctex::
+russia.png::CompressedTexture2D/CompressedTexture2D::2963183041712050633::1744150328::1744150328::1::::<><><>0<>0<>820f4110d6c5056a185570726e338b56<>res://.godot/imported/russia.png-3fed0c624dbe848f7db7ddd16060e76e.ctex::
+sweden.png::CompressedTexture2D/CompressedTexture2D::1454802688801039357::1741755926::1744148310::1::::<><><>0<>0<>e4a07a28d3830add7e55432250687237<>res://.godot/imported/sweden.png-658dbf3cac8718a4c6f18f7b2ff44b54.ctex::

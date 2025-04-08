@@ -1,0 +1,311 @@
+[gd_scene load_steps=2 format=3 uid="uid://dt52if1upmuks"]
+
+[ext_resource type="Script" uid="uid://p4d4fgsbw8ji" path="res://keyboard.gd" id="1_m2euy"]
+
+[node name="Keyboard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m2euy")
+
+[node name="Upper_Keyboard" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 84.0
+offset_top = 759.0
+offset_right = 620.0
+offset_bottom = 809.0
+
+[node name="Q Key" type="Button" parent="Upper_Keyboard" groups=["Keyboard"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Q"
+
+[node name="W Key" type="Button" parent="Upper_Keyboard" groups=["Keyboard"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "W"
+
+[node name="E Key" type="Button" parent="Upper_Keyboard" groups=["Keyboard"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "E"
+
+[node name="R Key" type="Button" parent="Upper_Keyboard" groups=["Keyboard"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "R"
+
+[node name="T Key" type="Button" parent="Upper_Keyboard" groups=["Keyboard"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "T"
+
+[node name="Y Key" type="Button" parent="Upper_Keyboard" groups=["Keyboard"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Y"
+
+[node name="U Key" type="Button" parent="Upper_Keyboard" groups=["Keyboard"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "U"
+
+[node name="I Key" type="Button" parent="Upper_Keyboard" groups=["Keyboard"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "I"
+
+[node name="O Key" type="Button" parent="Upper_Keyboard" groups=["Keyboard"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "O"
+
+[node name="P Key" type="Button" parent="Upper_Keyboard" groups=["Keyboard"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "P"
+
+[node name="Middle_Keyboard" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 84.0
+offset_top = 812.0
+offset_right = 620.0
+offset_bottom = 862.0
+
+[node name="A Key" type="Button" parent="Middle_Keyboard" groups=["Keyboard"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "A"
+
+[node name="S Key" type="Button" parent="Middle_Keyboard" groups=["Keyboard"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "S"
+
+[node name="D Key" type="Button" parent="Middle_Keyboard" groups=["Keyboard"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "D"
+
+[node name="F Key" type="Button" parent="Middle_Keyboard" groups=["Keyboard"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "F"
+
+[node name="G Key" type="Button" parent="Middle_Keyboard" groups=["Keyboard"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "G"
+
+[node name="H Key" type="Button" parent="Middle_Keyboard" groups=["Keyboard"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "H"
+
+[node name="J Key" type="Button" parent="Middle_Keyboard" groups=["Keyboard"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "J"
+
+[node name="K Key" type="Button" parent="Middle_Keyboard" groups=["Keyboard"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "K"
+
+[node name="L Key" type="Button" parent="Middle_Keyboard" groups=["Keyboard"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "L"
+
+[node name="Delete Key" type="Button" parent="Middle_Keyboard" groups=["Keyboard"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "DEL"
+
+[node name="Lower_Keyboard" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 138.0
+offset_top = 865.0
+offset_right = 620.0
+offset_bottom = 915.0
+
+[node name="Z Key" type="Button" parent="Lower_Keyboard" groups=["Keyboard"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Z"
+
+[node name="X Key" type="Button" parent="Lower_Keyboard" groups=["Keyboard"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "X"
+
+[node name="C Key" type="Button" parent="Lower_Keyboard" groups=["Keyboard"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "C"
+
+[node name="V Key" type="Button" parent="Lower_Keyboard" groups=["Keyboard"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "V"
+
+[node name="B Key" type="Button" parent="Lower_Keyboard" groups=["Keyboard"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "B"
+
+[node name="N Key" type="Button" parent="Lower_Keyboard" groups=["Keyboard"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "N"
+
+[node name="M Key" type="Button" parent="Lower_Keyboard" groups=["Keyboard"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "M"
+
+[node name="Enter Key" type="Button" parent="Lower_Keyboard" groups=["Keyboard"]]
+custom_minimum_size = Vector2(104, 50)
+layout_mode = 2
+text = "Enter"
+
+[node name="Space Key" type="Button" parent="."]
+custom_minimum_size = Vector2(320, 50)
+layout_mode = 0
+offset_left = 192.0
+offset_top = 917.0
+offset_right = 512.0
+offset_bottom = 967.0
+text = "SPACE"
+
+[node name="Inputs" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 84.0
+offset_top = 497.0
+offset_right = 620.0
+offset_bottom = 668.0
+
+[node name="attempt_1" type="LineEdit" parent="Inputs"]
+layout_mode = 2
+
+[node name="attempt_2" type="LineEdit" parent="Inputs"]
+layout_mode = 2
+
+[node name="attempt_3" type="LineEdit" parent="Inputs"]
+layout_mode = 2
+
+[node name="attempt_4" type="LineEdit" parent="Inputs"]
+layout_mode = 2
+
+[node name="attempt_5" type="LineEdit" parent="Inputs"]
+layout_mode = 2
+
+[node name="Result" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.266667
+anchor_right = 0.266667
+offset_left = 256.0
+offset_top = 688.0
+offset_right = 448.0
+offset_bottom = 719.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="list_of_hints" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 257.0
+offset_top = 497.0
+offset_right = 620.0
+offset_bottom = 667.0
+theme_override_constants/separation = 13
+
+[node name="score_label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 726.0
+offset_right = 512.0
+offset_bottom = 749.0
+horizontal_alignment = 1
+
+[node name="Control" type="Node2D" parent="."]
+
+[node name="TimerLabel" type="Label" parent="Control"]
+offset_left = 256.0
+offset_top = 430.0
+offset_right = 448.0
+offset_bottom = 461.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameTimer" type="Timer" parent="Control"]
+
+[node name="Border" type="ReferenceRect" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 640.0
+offset_bottom = 384.0
+border_color = Color(0, 0, 0, 1)
+border_width = 3.0
+
+[node name="display_flag" type="TextureRect" parent="Border"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="ReplayButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 309.0
+offset_top = 461.0
+offset_right = 375.0
+offset_bottom = 492.0
+text = "REPLAY"
+
+[node name="streak_label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 438.0
+offset_right = 115.0
+offset_bottom = 479.0
+text = "Streak: 0"
+
+[connection signal="pressed" from="Upper_Keyboard/Q Key" to="." method="_on_keyboard_pressed" binds= ["Q"]]
+[connection signal="pressed" from="Upper_Keyboard/W Key" to="." method="_on_keyboard_pressed" binds= ["W"]]
+[connection signal="pressed" from="Upper_Keyboard/E Key" to="." method="_on_keyboard_pressed" binds= ["E"]]
+[connection signal="pressed" from="Upper_Keyboard/R Key" to="." method="_on_keyboard_pressed" binds= ["R"]]
+[connection signal="pressed" from="Upper_Keyboard/T Key" to="." method="_on_keyboard_pressed" binds= ["T"]]
+[connection signal="pressed" from="Upper_Keyboard/Y Key" to="." method="_on_keyboard_pressed" binds= ["Y"]]
+[connection signal="pressed" from="Upper_Keyboard/U Key" to="." method="_on_keyboard_pressed" binds= ["U"]]
+[connection signal="pressed" from="Upper_Keyboard/I Key" to="." method="_on_keyboard_pressed" binds= ["I"]]
+[connection signal="pressed" from="Upper_Keyboard/O Key" to="." method="_on_keyboard_pressed" binds= ["O"]]
+[connection signal="pressed" from="Upper_Keyboard/P Key" to="." method="_on_keyboard_pressed" binds= ["P"]]
+[connection signal="pressed" from="Middle_Keyboard/A Key" to="." method="_on_keyboard_pressed" binds= ["A"]]
+[connection signal="pressed" from="Middle_Keyboard/S Key" to="." method="_on_keyboard_pressed" binds= ["S"]]
+[connection signal="pressed" from="Middle_Keyboard/D Key" to="." method="_on_keyboard_pressed" binds= ["D"]]
+[connection signal="pressed" from="Middle_Keyboard/F Key" to="." method="_on_keyboard_pressed" binds= ["F"]]
+[connection signal="pressed" from="Middle_Keyboard/G Key" to="." method="_on_keyboard_pressed" binds= ["G"]]
+[connection signal="pressed" from="Middle_Keyboard/H Key" to="." method="_on_keyboard_pressed" binds= ["H"]]
+[connection signal="pressed" from="Middle_Keyboard/J Key" to="." method="_on_keyboard_pressed" binds= ["J"]]
+[connection signal="pressed" from="Middle_Keyboard/K Key" to="." method="_on_keyboard_pressed" binds= ["K"]]
+[connection signal="pressed" from="Middle_Keyboard/L Key" to="." method="_on_keyboard_pressed" binds= ["L"]]
+[connection signal="pressed" from="Middle_Keyboard/Delete Key" to="." method="_on_delete_key_pressed"]
+[connection signal="pressed" from="Lower_Keyboard/Z Key" to="." method="_on_keyboard_pressed" binds= ["Z"]]
+[connection signal="pressed" from="Lower_Keyboard/X Key" to="." method="_on_keyboard_pressed" binds= ["X"]]
+[connection signal="pressed" from="Lower_Keyboard/C Key" to="." method="_on_keyboard_pressed" binds= ["C"]]
+[connection signal="pressed" from="Lower_Keyboard/V Key" to="." method="_on_keyboard_pressed" binds= ["V"]]
+[connection signal="pressed" from="Lower_Keyboard/B Key" to="." method="_on_keyboard_pressed" binds= ["B"]]
+[connection signal="pressed" from="Lower_Keyboard/N Key" to="." method="_on_keyboard_pressed" binds= ["N"]]
+[connection signal="pressed" from="Lower_Keyboard/M Key" to="." method="_on_keyboard_pressed" binds= ["M"]]
+[connection signal="pressed" from="Lower_Keyboard/Enter Key" to="." method="_on_enter_key_pressed"]
+[connection signal="pressed" from="Space Key" to="." method="_on_keyboard_pressed" binds= [" "]]
+[connection signal="pressed" from="ReplayButton" to="." method="_on_replay_button_pressed"]
