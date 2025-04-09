@@ -3,12 +3,18 @@ extends Control
 class_name keyboard_inputs
 
 @onready var flag_texture = $Border/display_flag
-@onready var result = $Result
-@onready var list = $list_of_hints
+@onready var result = $Node2D/Result
+@onready var list = $Node2D/list_of_hints
 @onready var input = $Inputs/attempt_1
 @onready var game_timer = $Control/GameTimer
 @onready var timer_label = $Control/TimerLabel
-@onready var score_label = $score_label
+@onready var score_label = $Node2D/score_label
+@onready var total_score_label: Label = $Score_Panel/total_score_label
+@onready var streak_label = $Score_Panel/streak_label
+@onready var replay_button = $Score_Panel/ReplayButton
+@onready var panel: TextureRect = $Score_Panel/Panel
+@onready var distortion_2: Sprite2D = $Border/Distortion2
+
 
 # To access all the attempts
 @export var A : Array[LineEdit] = []
@@ -19,6 +25,8 @@ var time_remaining = 60  # Initial time
 var row_num = 0
 var stored_attempts = ["", "", "", "", ""]
 var score = 0
+var total_score = 0
+var streak = 0
 
 # Preparing the Attempt inputs
 func _ready():
@@ -34,6 +42,35 @@ func _ready():
 		start_new_game()
 	
 func start_new_game():
+	# Get new country + data
+	selected_country = CountryFlags.get_random_country()
+	selected_data = CountryFlags.flags[selected_country]
+	
+	# Reset vars
+	row_num = 0
+	time_remaining = 60
+	stored_attempts = ["", "", "", "", ""]
+	score = 0
+	timer_label.text = "Time: " + str(time_remaining) + "s"
+	score_label.text = "Score: " + str(score)
+	result.text = ""
+	
+	total_score_label.visible = false
+	streak_label.visible = false
+	panel.visible = false
+	replay_button.visible = false
+	distortion_2.visible = true
+	
+	# Reset all input fields
+	for line in A:
+		line.text = ""
+	input = A[0]
+	
+	# Clear hints
+	for child in list.get_children():
+		child.queue_free()
+	
+	# Timer
 	time_remaining = 60  # Reset timer
 	timer_label.text = "Time: " + str(time_remaining) + "s"
 	if game_timer != null:
@@ -83,25 +120,38 @@ func _on_enter_key_pressed():
 	stored_attempts[row_num] = input.text
 	
 	# Guessing the correct country
-	if stored_attempts[row_num] == selected_country:
+	if stored_attempts[row_num].to_upper() == selected_country.to_upper():
 		# Score depends on the amount of attempts
-		match row_num:
-			0: score = 100
-			1: score = 80
-			2: score = 60
-			3: score = 40
-			4: score = 20
+		score = Hud.get_score(row_num)
+		total_score += score
 		score_label.text = "Score: " + str(score)
+		total_score_label.text = "Total Score: " + str(total_score)
 		
+		# Winning Streak
+		streak += 1
+		if streak >= 5:
+			streak_label.text = "Streak: " + str(streak) + " 🔥"
+		else:
+			streak_label.text = "Streak: " + str(streak)
+			
 		# Reveal flag and display win message
 		flag_texture.modulate = Color(1, 1, 1, 1)
 		result.text = "Correct! The country is " + selected_country
+		
+		total_score_label.visible = true
+		streak_label.visible = true
+		panel.visible = true
+		replay_button.visible = true
+		distortion_2.visible = false
+		
+		game_timer.stop()
+		
 		return
 
 	# Current guess is incorrect
 	else:
 		row_num += 1
-		hint.text += str(" ❌ - Hint: " + get_hint(row_num))
+		hint.text += str(" ❌ - Hint: " + Hud.get_hint(row_num, selected_data))
 		list.add_child(hint)
 
 		# Move to next attempt if there are guesses left
@@ -114,23 +164,38 @@ func _on_enter_key_pressed():
 		else:
 			flag_texture.modulate = Color(1, 1, 1, 1) # Reveals the flag
 			result.text = "Game Over! The country was " + selected_country
+			streak = 0
+			streak_label.text = "Streak: " + str(streak)
+			
+			total_score_label.visible = true
+			streak_label.visible = true
+			panel.visible = true
+			replay_button.visible = true
+			distortion_2.visible = false
+			
+			game_timer.stop()
 
 	# Display array with all attempts
 	print(stored_attempts)
-
-#Hint depends on the amount already guessed
-func get_hint(attempt):
-	match attempt:
-		1: return "Flag Colors: " + selected_data["flag_colors"]
-		2: return "Country Size: " + selected_data["size"]
-		3: return "Population: " + selected_data["population"]
-		4: return "Capital City: " + selected_data["capital"]
-		5: return "Flag revealed!"
 
 # Time is up
 func time_up():
 	flag_texture.modulate = Color(1, 1, 1, 1)  # Reveal flag
 	result.text = "Time's up! The country was " + selected_country.capitalize()
+	score = 0
+	streak = 0 # resets the streak
+	
+	# Display on Score Panel
+	score_label.text = "Score: " + str(score)
+	total_score_label.text = "Total Score: " + str(total_score)
+	streak_label.text = "Streak: " + str(streak)
+	
+	
+	total_score_label.visible = true
+	streak_label.visible = true
+	panel.visible = true
+	replay_button.visible = true
+	distortion_2.visible = false
 	game_timer.stop()  # Stop the timer
 
 func _on_timer_tick():
@@ -151,3 +216,6 @@ func _on_timer_tick():
 	if time_remaining <= 0:
 		time_up()
 	
+
+func _on_replay_button_pressed() -> void:
+	start_new_game()

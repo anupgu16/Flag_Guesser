@@ -1,6 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://dt52if1upmuks"]
+[gd_scene load_steps=9 format=3 uid="uid://dt52if1upmuks"]
 
 [ext_resource type="Script" uid="uid://p4d4fgsbw8ji" path="res://keyboard.gd" id="1_m2euy"]
+[ext_resource type="Script" uid="uid://vylnn16yxlp" path="res://hud.gd" id="2_6veuu"]
+[ext_resource type="Shader" uid="uid://d4mo15b8pvlyq" path="res://distortion_one.gdshader" id="2_d8yjl"]
+[ext_resource type="Texture2D" uid="uid://cd4nq1st82ab8" path="res://brazil.png" id="3_dutb4"]
+[ext_resource type="Texture2D" uid="uid://nxed1wcu7ixk" path="res://Flag Images/mexico.png" id="3_rpc6l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dutb4"]
+shader = ExtResource("2_d8yjl")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dutb4"]
+atlas = ExtResource("3_dutb4")
+region = Rect2(659, 511, 76, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8yjl"]
+atlas = ExtResource("3_rpc6l")
+region = Rect2(1022, 557, 1, 1)
 
 [node name="Keyboard" type="Control"]
 layout_mode = 3
@@ -205,34 +220,6 @@ layout_mode = 2
 [node name="attempt_5" type="LineEdit" parent="Inputs"]
 layout_mode = 2
 
-[node name="Result" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.266667
-anchor_right = 0.266667
-offset_left = 256.0
-offset_top = 688.0
-offset_right = 448.0
-offset_bottom = 719.0
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="list_of_hints" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 257.0
-offset_top = 497.0
-offset_right = 620.0
-offset_bottom = 667.0
-theme_override_constants/separation = 13
-
-[node name="score_label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 192.0
-offset_top = 726.0
-offset_right = 512.0
-offset_bottom = 749.0
-horizontal_alignment = 1
-
 [node name="Control" type="Node2D" parent="."]
 
 [node name="TimerLabel" type="Label" parent="Control"]
@@ -253,6 +240,18 @@ offset_right = 640.0
 offset_bottom = 384.0
 border_color = Color(0, 0, 0, 1)
 border_width = 3.0
+editor_only = false
+
+[node name="display_flag2" type="TextureRect" parent="Border"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_dutb4")
+expand_mode = 1
 
 [node name="display_flag" type="TextureRect" parent="Border"]
 layout_mode = 1
@@ -262,6 +261,86 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
+
+[node name="Distortion" type="Sprite2D" parent="Border"]
+visible = false
+material = SubResource("ShaderMaterial_dutb4")
+position = Vector2(289, 159.5)
+scale = Vector2(7.55263, 4.5)
+texture = SubResource("AtlasTexture_dutb4")
+
+[node name="Distortion2" type="Sprite2D" parent="Border"]
+material = SubResource("ShaderMaterial_dutb4")
+position = Vector2(289, 159.5)
+scale = Vector2(7.55263, 4.5)
+texture = SubResource("AtlasTexture_dutb4")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(1, 0)
+script = ExtResource("2_6veuu")
+
+[node name="Result" type="Label" parent="Node2D"]
+anchors_preset = -1
+anchor_left = -0.266667
+anchor_right = 0.266667
+offset_left = 191.0
+offset_top = 685.0
+offset_right = 511.0
+offset_bottom = 716.0
+size_flags_horizontal = 4
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="list_of_hints" type="VBoxContainer" parent="Node2D"]
+offset_left = 257.0
+offset_top = 497.0
+offset_right = 620.0
+offset_bottom = 667.0
+theme_override_constants/separation = 13
+metadata/_edit_use_anchors_ = true
+
+[node name="score_label" type="Label" parent="Node2D"]
+offset_left = 192.0
+offset_top = 726.0
+offset_right = 512.0
+offset_bottom = 749.0
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Score_Panel" type="Node2D" parent="."]
+
+[node name="Panel" type="TextureRect" parent="Score_Panel"]
+offset_left = 128.0
+offset_top = 485.0
+offset_right = 576.0
+offset_bottom = 677.0
+texture = SubResource("AtlasTexture_d8yjl")
+
+[node name="streak_label" type="Label" parent="Score_Panel"]
+offset_left = 504.0
+offset_top = 493.0
+offset_right = 568.0
+offset_bottom = 519.0
+
+[node name="total_score_label" type="Label" parent="Score_Panel"]
+offset_left = 136.0
+offset_top = 493.0
+offset_right = 200.0
+offset_bottom = 516.0
+
+[node name="ReplayButton" type="Button" parent="Score_Panel"]
+anchors_preset = -1
+anchor_left = -0.433333
+anchor_top = -0.401367
+anchor_right = -0.433333
+anchor_bottom = -0.401367
+offset_left = 312.0
+offset_top = 613.0
+offset_right = 392.0
+offset_bottom = 653.0
+text = "Replay"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Upper_Keyboard/Q Key" to="." method="_on_keyboard_pressed" binds= ["Q"]]
 [connection signal="pressed" from="Upper_Keyboard/W Key" to="." method="_on_keyboard_pressed" binds= ["W"]]
@@ -292,3 +371,4 @@ expand_mode = 1
 [connection signal="pressed" from="Lower_Keyboard/M Key" to="." method="_on_keyboard_pressed" binds= ["M"]]
 [connection signal="pressed" from="Lower_Keyboard/Enter Key" to="." method="_on_enter_key_pressed"]
 [connection signal="pressed" from="Space Key" to="." method="_on_keyboard_pressed" binds= [" "]]
+[connection signal="pressed" from="Score_Panel/ReplayButton" to="." method="_on_replay_button_pressed"]

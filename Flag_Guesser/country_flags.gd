@@ -52,6 +52,34 @@ var flags = {
 		"population": "5 million",
 		"capital": "Helsinki"
 	},
+	"JAPAN": {
+		"image": "res://Flag Images/japan.png",
+		"flag_colors": "Red, White",
+		"size": "377,973 km²",
+		"population": "124 million",
+		"capital": "Tokyo"
+	},
+	"AUSTRALIA": {
+		"image": "res://Flag Images/australia.png",
+		"flag_colors": "Red, White, Blue",
+		"size": "7,692,024 km²",
+		"population": "26 million",
+		"capital": "Canberra"
+	},
+	"INDIA": {
+		"image": "res://Flag Images/india.png",
+		"flag_colors": "Orange, White, Green, Blue",
+		"size": "3,297,263 km²",
+		"population": "1.42 billion",
+		"capital": "New Delhi"
+	},
+	"RUSSIA": {
+		"image": "res://Flag Images/russia.png",
+		"flag_colors": "Red, White, Blue",
+		"size": "17,098,242 km²",
+		"population": "144 million",
+		"capital": "Moscow"
+	},
 }
 
 func get_random_country():
