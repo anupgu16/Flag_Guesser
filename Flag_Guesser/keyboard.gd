@@ -18,7 +18,6 @@ class_name keyboard_inputs
 @onready var distortion: Sprite2D = $Border/Distortion
 @onready var distortion_2: Sprite2D = $Border/Distortion2
 @onready var distortion_3: Sprite2D = $Border/Distortion3
-@onready var distortion_6: Sprite2D = $Border/Distortion6
 @onready var distortion_4: Sprite2D = $Border/Distortion4
 
 
@@ -62,7 +61,7 @@ func start_new_game():
 	result.text = ""
 	
 	Hud.hide_leaderboard(total_score_label, streak_label, panel, replay_button)
-	Hud.turn_on_all_distortions(distortion, distortion_2, distortion_3, distortion_4, distortion_6)
+	Hud.turn_on_all_distortions(distortion, distortion_2, distortion_3, distortion_4)
 	
 	# Reset all input fields
 	for line in A:
@@ -82,9 +81,6 @@ func start_new_game():
 		game_timer.start()  # Start the timer
 		print("Timer started:", game_timer)  # Debugging
 	flag_texture.texture = load(selected_data["image"])
-
-	# Obscures flag
-	flag_texture.modulate = Color(1, 1, 1, 0.2)
 
 # Put the characters into input
 func press_key(digit):
@@ -121,7 +117,7 @@ func _on_enter_key_pressed():
 	
 	# Store the inputs
 	stored_attempts[row_num] = input.text
-	Hud.disable_distortions(row_num, distortion, distortion_2, distortion_3, distortion_4, distortion_6)
+	Hud.disable_distortions(row_num, distortion, distortion_2, distortion_3, distortion_4)
 	
 	# Guessing the correct country
 	if stored_attempts[row_num].to_upper() == selected_country.to_upper():
@@ -143,7 +139,7 @@ func _on_enter_key_pressed():
 		result.text = "Correct! The country is " + selected_country
 		
 		Hud.show_leaderboard(total_score_label, streak_label, panel, replay_button)
-		Hud.turn_off_all_distortions(distortion, distortion_2, distortion_3, distortion_4, distortion_6)
+		Hud.turn_off_all_distortions(distortion, distortion_2, distortion_3, distortion_4)
 		
 		game_timer.stop()
 		
@@ -166,11 +162,14 @@ func _on_enter_key_pressed():
 		else:
 			flag_texture.modulate = Color(1, 1, 1, 1) # Reveals the flag
 			result.text = "Game Over! The country was " + selected_country
+			
 			streak = 0
 			streak_label.text = "Streak: " + str(streak)
+			total_score += score
+			total_score_label.text = "Total Score: " + str(total_score)
 			
 			Hud.show_leaderboard(total_score_label, streak_label, panel, replay_button)
-			Hud.turn_off_all_distortions(distortion, distortion_2, distortion_3, distortion_4, distortion_6)
+			Hud.turn_off_all_distortions(distortion, distortion_2, distortion_3, distortion_4)
 			
 			game_timer.stop()
 
@@ -191,7 +190,7 @@ func time_up():
 	
 	
 	Hud.show_leaderboard(total_score_label, streak_label, panel, replay_button)
-	Hud.turn_off_all_distortions(distortion, distortion_2, distortion_3, distortion_4, distortion_6)
+	Hud.turn_off_all_distortions(distortion, distortion_2, distortion_3, distortion_4)
 	game_timer.stop()  # Stop the timer
 
 func _on_timer_tick():

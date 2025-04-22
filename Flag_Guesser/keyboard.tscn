@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dt52if1upmuks"]
+[gd_scene load_steps=15 format=3 uid="uid://dt52if1upmuks"]
 
 [ext_resource type="Script" uid="uid://p4d4fgsbw8ji" path="res://keyboard.gd" id="1_m2euy"]
 [ext_resource type="Script" uid="uid://vylnn16yxlp" path="res://hud.gd" id="2_6veuu"]
@@ -8,7 +8,6 @@
 [ext_resource type="Shader" uid="uid://c6fvlxu14jowh" path="res://distortion_two.gdshader" id="4_efd6q"]
 [ext_resource type="Shader" uid="uid://dm15ib3244d8f" path="res://distortion_3.gdshader" id="5_sryu3"]
 [ext_resource type="Shader" uid="uid://e2t712kndcll" path="res://distortion_four.gdshader" id="6_sryu3"]
-[ext_resource type="Shader" uid="uid://eymx6qfb0lf3" path="res://distortion_five.gdshader" id="7_8t13d"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8t13d"]
 shader = ExtResource("2_d8yjl")
@@ -21,22 +20,14 @@ region = Rect2(659, 511, 76, 70)
 shader = ExtResource("4_efd6q")
 shader_parameter/freq = 60.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_msmor"]
-shader = ExtResource("5_sryu3")
-shader_parameter/strenght = 0.85
-shader_parameter/speed = 5.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tndrk"]
-shader = ExtResource("7_8t13d")
-shader_parameter/frequency = 4.0
-shader_parameter/amplitude = 2.0
-shader_parameter/ripple_rate = 5.0
-shader_parameter/wave_amplitude = 0.05
-shader_parameter/wave_frequency = 4.0
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_32va8"]
 shader = ExtResource("6_sryu3")
 shader_parameter/freq = 60.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_msmor"]
+shader = ExtResource("5_sryu3")
+shader_parameter/speed = 1.1
+shader_parameter/intensity = 0.5
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d8yjl"]
 atlas = ExtResource("3_rpc6l")
@@ -289,8 +280,8 @@ expand_mode = 1
 
 [node name="Distortion" type="Sprite2D" parent="Border"]
 material = SubResource("ShaderMaterial_8t13d")
-position = Vector2(289, 159.5)
-scale = Vector2(7.55263, 4.5)
+position = Vector2(288.5, 159.5)
+scale = Vector2(7.61842, 4.61429)
 texture = SubResource("AtlasTexture_dutb4")
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="Border"]
@@ -310,25 +301,17 @@ scale = Vector2(2.885, 1.576)
 copy_mode = 2
 
 [node name="Distortion3" type="Sprite2D" parent="Border"]
-material = SubResource("ShaderMaterial_msmor")
+material = SubResource("ShaderMaterial_32va8")
 position = Vector2(289, 159.5)
-scale = Vector2(7.47105, 4.51857)
+scale = Vector2(7.55263, 4.5)
 texture = SubResource("AtlasTexture_dutb4")
 
 [node name="BackBufferCopy3" type="BackBufferCopy" parent="Border"]
 
-[node name="Distortion6" type="Sprite2D" parent="Border"]
-material = SubResource("ShaderMaterial_tndrk")
-position = Vector2(286.026, 156.125)
-scale = Vector2(7.63088, 4.54643)
-texture = SubResource("AtlasTexture_dutb4")
-
-[node name="BackBufferCopy4" type="BackBufferCopy" parent="Border"]
-
 [node name="Distortion4" type="Sprite2D" parent="Border"]
-material = SubResource("ShaderMaterial_32va8")
+material = SubResource("ShaderMaterial_msmor")
 position = Vector2(289, 159.5)
-scale = Vector2(7.55263, 4.5)
+scale = Vector2(7.47105, 4.51857)
 texture = SubResource("AtlasTexture_dutb4")
 
 [node name="Node2D" type="Node2D" parent="."]
