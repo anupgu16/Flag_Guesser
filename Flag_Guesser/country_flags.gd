@@ -31,7 +31,7 @@ var flags = {
 		"population": "131 million",
 		"capital": "Mexico City"
 	},
-	"Germany": {
+	"GERMANY": {
 		"image": "res://Flag Images/germany.png",
 		"flag_colors": "Red, Black, Yellow",
 		"size": "357,596 km²",
