@@ -6,7 +6,8 @@ class_name keyboard_inputs
 @onready var result = $Node2D/Result
 @onready var list = $Node2D/list_of_hints
 
-@onready var input = $Inputs/attempt_1
+@onready var input: LineEdit = $Inputs/attempt_1
+
 @onready var game_timer = $Control/GameTimer
 @onready var timer_label = $Control/TimerLabel
 @onready var score_label = $Node2D/score_label
@@ -214,3 +215,7 @@ func _on_timer_tick():
 
 func _on_replay_button_pressed() -> void:
 	start_new_game()
+
+
+func physical_enter_key_text_submitted(_new_text: String) -> void:
+	_on_enter_key_pressed()

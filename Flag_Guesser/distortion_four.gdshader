@@ -7,5 +7,5 @@ void fragment() {
 	new_uv.y += sin(new_uv.x * freq + TIME) * 0.1;
 	vec3 new_colors = textureLod(existing_screen_texture, new_uv, 0.0).rgb;
 	COLOR.rgb = new_colors;
-	
+
 }

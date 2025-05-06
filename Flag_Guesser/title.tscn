@@ -31,4 +31,36 @@ text = "Flag Guesser"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 304.0
+offset_right = 400.0
+offset_bottom = 560.0
+scale = Vector2(1.5, 1.5)
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -32.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "x"
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 240.0
+offset_bottom = 247.0
+text = "Welcome to Flag Guesser
+
+You will be given 5 attempts to guess a distorted image of a flag.
+After each attempt you will be given a hint and a layer of distortion will be removed."
+vertical_alignment = 1
+autowrap_mode = 2
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Button" to="." method="close_instructions"]

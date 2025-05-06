@@ -18,11 +18,11 @@ region = Rect2(659, 511, 76, 70)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_se432"]
 shader = ExtResource("4_efd6q")
-shader_parameter/freq = 60.0
+shader_parameter/freq = 30.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_32va8"]
 shader = ExtResource("6_sryu3")
-shader_parameter/freq = 60.0
+shader_parameter/freq = 30.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_msmor"]
 shader = ExtResource("5_sryu3")
@@ -307,6 +307,8 @@ scale = Vector2(7.55263, 4.5)
 texture = SubResource("AtlasTexture_dutb4")
 
 [node name="BackBufferCopy3" type="BackBufferCopy" parent="Border"]
+position = Vector2(288.5, 161)
+scale = Vector2(2.865, 1.61)
 
 [node name="Distortion4" type="Sprite2D" parent="Border"]
 material = SubResource("ShaderMaterial_msmor")
@@ -419,4 +421,9 @@ layout_mode = 2
 [connection signal="pressed" from="Lower_Keyboard/M Key" to="." method="_on_keyboard_pressed" binds= ["M"]]
 [connection signal="pressed" from="Lower_Keyboard/Enter Key" to="." method="_on_enter_key_pressed"]
 [connection signal="pressed" from="Space Key" to="." method="_on_keyboard_pressed" binds= [" "]]
+[connection signal="text_submitted" from="Inputs/attempt_1" to="." method="physical_enter_key_text_submitted"]
+[connection signal="text_submitted" from="Inputs/attempt_2" to="." method="physical_enter_key_text_submitted"]
+[connection signal="text_submitted" from="Inputs/attempt_3" to="." method="physical_enter_key_text_submitted"]
+[connection signal="text_submitted" from="Inputs/attempt_4" to="." method="physical_enter_key_text_submitted"]
+[connection signal="text_submitted" from="Inputs/attempt_5" to="." method="physical_enter_key_text_submitted"]
 [connection signal="pressed" from="Score_Panel/ReplayButton" to="." method="_on_replay_button_pressed"]
