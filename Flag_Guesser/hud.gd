@@ -26,9 +26,9 @@ func get_score(row_num):
 # Disable distortions based on row number
 func disable_distortions(row_num, d1, d2, d3, d4):
 	match row_num:
-		0: d1.visible = false
-		1: d2.visible = false
-		2: d3.visible = false
+		0: d2.visible = false
+		1: d3.visible = false
+		2: d1.visible = false
 		3: d4.visible = false
 
 # Shows all distortions

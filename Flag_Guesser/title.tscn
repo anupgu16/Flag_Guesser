@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://btca1eym6kd2v"]
+[gd_scene load_steps=4 format=3 uid="uid://btca1eym6kd2v"]
 
 [ext_resource type="Script" uid="uid://c461t30cr2a4f" path="res://title.gd" id="1_y7k74"]
+[ext_resource type="Texture2D" uid="uid://b5g2nokyi0xbi" path="res://flag_guesser_logo.png" id="2_oyqm6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpexm"]
+atlas = ExtResource("2_oyqm6")
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -13,19 +17,37 @@ script = ExtResource("1_y7k74")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 184.0
+offset_left = 192.0
 offset_top = 704.0
-offset_right = 504.0
+offset_right = 512.0
 offset_bottom = 832.0
 text = "START"
 icon_alignment = 1
 
+[node name="Panel2" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 80.0
+offset_top = 225.0
+offset_right = 656.0
+offset_bottom = 380.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 192.0
+offset_right = 656.0
+offset_bottom = 352.0
+texture = SubResource("AtlasTexture_kpexm")
+
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 176.0
 offset_top = 192.0
 offset_right = 512.0
 offset_bottom = 320.0
+scale = Vector2(1.04575, 1)
 theme_override_font_sizes/font_size = 50
 text = "Flag Guesser"
 horizontal_alignment = 1
@@ -33,11 +55,11 @@ vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 144.0
-offset_top = 304.0
-offset_right = 400.0
-offset_bottom = 560.0
-scale = Vector2(1.5, 1.5)
+offset_left = 192.0
+offset_top = 384.0
+offset_right = 455.0
+offset_bottom = 640.0
+scale = Vector2(1.21779, 1.21779)
 
 [node name="Button" type="Button" parent="Panel"]
 layout_mode = 1

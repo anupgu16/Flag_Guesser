@@ -3,6 +3,7 @@ extends Control
 class_name keyboard_inputs
 
 @onready var flag_texture = $Border/display_flag
+@onready var mini_flag_texture = $Border2/display_flag
 @onready var result = $Node2D/Result
 @onready var list = $Node2D/list_of_hints
 
@@ -34,6 +35,8 @@ var score = 0
 var total_score = 0
 var streak = 0
 
+var set_mini_flag = false
+
 # Preparing the Attempt inputs
 func _ready():
 	if game_timer != null:
@@ -48,6 +51,8 @@ func _ready():
 		start_new_game()
 	
 func start_new_game():
+	if set_mini_flag == true:
+		mini_flag_texture.texture = load(selected_data["image"])
 	# Get new country + data
 	selected_country = CountryFlags.get_random_country()
 	selected_data = CountryFlags.flags[selected_country]
@@ -214,6 +219,7 @@ func _on_timer_tick():
 	
 
 func _on_replay_button_pressed() -> void:
+	set_mini_flag = true
 	start_new_game()
 
 
